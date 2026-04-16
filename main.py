@@ -4,20 +4,18 @@ import os
 
 
 
-name_dir = input("Введите название папки   ")
-name_file = input("Введите название файла   ")
+# name_dir = input("Введите название папки   ")
+# name_file = input("Введите название файла   ")
 
-if name_dir not in os.listdir("."):
-    os.mkdir(name_dir)   
-
-with open(name_dir + "/" + name_file, "a", encoding="utf-8") as file:
-    pass 
-
+# if name_dir not in os.listdir("."):
+#     os.mkdir(name_dir)   
 
 # with open(name_dir + "/" + name_file, "a", encoding="utf-8") as file:
-#     pass
+#     pass 
 
 
+
+append_film("Titanic", 9.9)
 
 # write_user_message("Привет пайтон")
 # append_new_user()

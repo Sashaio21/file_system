@@ -1,3 +1,4 @@
+from json import load, dump
 # w - режим перезаписи файла (старое содержимое удаляет)
 # with open("data/new_data.txt", "w", encoding="utf-8") as file:
 #     file.write("Привет мир\n")
@@ -22,3 +23,22 @@ def append_new_user():
             file.write(name + "\n")
 
 
+
+def append_film(title, raiting):
+    with open("data/movies.json", "r", encoding="utf-8") as file:
+        movies_data = load(file)
+
+
+    for movie in movies_data:
+        if movie["title"] == title:
+            print("Фильм уже добавлен")
+            return
+
+    movies_data.append({
+        "title": title,
+        "raiting": raiting
+    })
+
+    with open("data\movies.json", "w", encoding="utf-8") as file:
+        dump(movies_data, file, indent=4)
+    
